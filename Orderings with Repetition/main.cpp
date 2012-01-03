@@ -31,7 +31,7 @@ int main()
 	for(int c = 0 ; c < length(indices) ; ++c)	// initialize indices
 		indices[c] = 0;
 
-	do
+	for(;;)
 	{
 		cout << std::left << setw(5) << ++c << ": ";
 		for(int c = length(arrays)-1 ; c >= 0  ; --c)
@@ -39,15 +39,17 @@ int main()
 		cout << '\n';
 		
 		i = 0;
-		indices[0]++;
-		while(indices[i] >= lengths[i])
+		goto increment;
+		do
 		{
 			indices[i++] = 0;
-			if(i >= length(arrays)) break;
+			if(i >= length(arrays)) goto end;
+increment:
 			indices[i]++;
-		} // end while
-	}
-	while(i < length(arrays));
+		}
+		while(indices[i] >= lengths[i]);
+	} // end for
+end:
 
 	system("PAUSE");
 	return 0;
