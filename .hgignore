@@ -1,0 +1,8 @@
+syntax: regexp
+Debug/*
+Release/*
+ipch/*
+syntax: glob
+Orderings with Repetition.opensdf
+Orderings with Repetition.sdf
+Orderings with Repetition.suo
